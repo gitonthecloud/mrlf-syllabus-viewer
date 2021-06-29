@@ -143,20 +143,14 @@
                     </div>
                   {{- end}}
 
-                  {{- if $cg.asn_learningProgression }}
+                  {{- if $cg.schema_org_measuredProperty }}
                     <div class="learning_progressions">
                       <div class="heading">Learning Progressions</div>
-                      <span>{{$cg.asn_learningProgression.literal}}</span>
-                      {{- template "lp_links" $cg.asn_minorAlignment }}
+                      <span>{{$cg.schema_org_measuredProperty.literal}}</span>
+                      {{- template "lp_links" $cg.asn_complexityLevel }}
                     </div>
                   {{- end}}
 
-                  <!-- {{- if $cg.asn_minorAlignment }}
-                    <div class="learning_progression_links">
-                      <div class="heading">Learning Progression Links</div>
-                      {{- template "lp_links" $cg.asn_minorAlignment }}
-                    </div>
-                  {{- end}} -->
                 </div>
               </div>
               <br/>
