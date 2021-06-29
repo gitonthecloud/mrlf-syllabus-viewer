@@ -143,12 +143,20 @@
                     </div>
                   {{- end}}
 
-                  {{- if $cg.asn_minorAlignment }}
+                  {{- if $cg.asn_learningProgression }}
                     <div class="learning_progressions">
                       <div class="heading">Learning Progressions</div>
-                      {{- template "learning_progressions" $cg.asn_minorAlignment }}
+                      <span>{{$cg.asn_learningProgression.literal}}</span>
+                      {{- template "lp_links" $cg.asn_minorAlignment }}
                     </div>
                   {{- end}}
+
+                  <!-- {{- if $cg.asn_minorAlignment }}
+                    <div class="learning_progression_links">
+                      <div class="heading">Learning Progression Links</div>
+                      {{- template "lp_links" $cg.asn_minorAlignment }}
+                    </div>
+                  {{- end}} -->
                 </div>
               </div>
               <br/>
@@ -193,7 +201,7 @@
           </div>
         {{- end}}
 
-        {{- define "learning_progressions"}}
+        {{- define "lp_links"}}
           {{- range $_, $lp := . }}
             {{- if $lp.uri }}
               <span><a href="{{$lp.uri}}">{{$lp.prefLabel}}</a>, </span>
